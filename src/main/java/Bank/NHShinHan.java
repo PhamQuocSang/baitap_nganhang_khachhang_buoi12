@@ -2,6 +2,7 @@ package Bank;
 
 import KhachHang.KhachHang;
 import KhachHang.KhachHangController;
+import ReadandWrite.Write;
 
 
 import java.util.ArrayList;
@@ -126,6 +127,16 @@ public class NHShinHan extends Bank implements IBankController {
         if (timThay == false) {
             System.out.println("Không tìm thấy mã id của khách hàng!");
         }
+    }
+    String path="E:\\Java\\BtNganHangKhachHangCheckout\\trunk\\OutputShinhan.txt";
+    Write write = new Write();
+
+    public void GhiDuLieuKhachShinhan() {
+        write.GhiDuLieuKhach(path, listKhachHangSHINHAN);
+    }
+
+    public void DocDuLieuShinhan(){
+        write.DocDuLieuKhach(path);
     }
 }
 
