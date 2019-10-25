@@ -11,7 +11,6 @@ import java.util.Scanner;
 
 /**
  * Hello world!
- *
  */
 public class App {
     static Scanner scanner = new Scanner(System.in);
@@ -20,13 +19,14 @@ public class App {
     static ArrayList<NHShinHan> listBank2 = new ArrayList<NHShinHan>();
 
     public static void main(String[] args) {
+
         KhachHangController cc = new KhachHangController();
         while (true) {
             NHShinHan nhShinHan = new NHShinHan();
             NHHSBC nhhsbc = new NHHSBC();
             System.out.println("_________________________________________");
-            System.out.println("Chọn một trong các phương thức hành động sau: \n1. Thêm khách hàng HSBC \n2. Hiển thị khách hàng HSBC \n3. Thực hiện giao dịch HSBC");
-            System.out.println("\n4. Thêm khách hàng ShinHan \n5. Hiển thị khách hàng ShinHan \n6. Thực hiện giao dịch ShinHan \n\n7. Hiển thị danh sách khách hàng của cả 2 ngân hàng");
+            System.out.println("Chọn một trong các phương thức hành động sau: \n1. Thêm khách hàng HSBC \n2. Hiển thị khách hàng HSBC \n3. Thực hiện giao dịch HSBC \n4.Đọc file txt danh sách khách hàng HSBC level 1");
+            System.out.println("\n5. Thêm khách hàng ShinHan \n6. Hiển thị khách hàng ShinHan \n7. Thực hiện giao dịch ShinHan \n8.Đọc file txt danh sách khách hàng Shihan level 1\n\n9. Hiển thị danh sách khách hàng của cả 2 ngân hàng");
             System.out.println("_________________________________________");
             System.out.print("Chọn: ");
             String s = scanner.nextLine();
@@ -38,22 +38,52 @@ public class App {
 
                 case "2":
                     nhhsbc.hienThiKhachHangHSBC();
+                    System.out.println("Bạn có muốn lưu danh sách khách hàng có Level 1 vào file '.txt' không?\n1. Có    2.Không");
+                    System.out.print("Chọn: ");
+                    String temp = scanner.nextLine();
+                    switch (temp) {
+                        case "1":
+                            System.out.println("Danh sách khách hàng Level 1: ");
+                            nhhsbc.GhiDuLieuKhachHSBC();
+                            break;
+                        case "2":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
-
                 case "3":
-//                    nhhsbc.thucHienChuyenTien();
                     nhhsbc.thucHienChuyenTien2();
                     break;
                 case "4":
-                    nhShinHan.themKhachHangSHINHAN();
+                    nhhsbc.DocDuLieuHSBC();
                     break;
                 case "5":
-                    nhShinHan.hienThiKhachHangSHINHAN();
+                    nhShinHan.themKhachHangSHINHAN();
                     break;
                 case "6":
-                    nhShinHan.thucHienChuyenTien2();
+                    nhShinHan.hienThiKhachHangSHINHAN();
+                    System.out.println("Bạn có muốn lưu danh sách khách hàng có Level 1 vào file '.txt' không?\n1. Có    2.Không");
+                    System.out.print("Chọn: ");
+                    String temp2 = scanner.nextLine();
+                    switch (temp2) {
+                        case "1":
+                            System.out.println("Danh sách khách hàng Level 1: ");
+                            nhShinHan.GhiDuLieuKhachShinhan();
+                            break;
+                        case "2":
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case "7":
+                    nhShinHan.thucHienChuyenTien2();
+                    break;
+                case "8":
+                    nhShinHan.DocDuLieuShinhan();
+                    break;
+                case "9":
                     nhhsbc.hienThiKhachHangHSBC();
                     nhShinHan.hienThiKhachHangSHINHAN();
                     break;

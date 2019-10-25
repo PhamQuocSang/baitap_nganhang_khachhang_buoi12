@@ -1,6 +1,7 @@
 package KhachHang;
 
 import Bank.Bank;
+import ReadandWrite.Write;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,25 +19,24 @@ public class KhachHangController extends KhachHang implements IKhachHangControll
 //            System.out.println("Chọn: ");
 //            String temp = scanner.nextLine();
 //            if (temp.equals("1")) {
-                boolean checkLevel = true;
-                KhachHang khachHang = new KhachHang();
-                System.out.print("Nhập mã khách hàng: ");
-                khachHang.setMaKH(scanner.nextLine());
-                System.out.print("Nhập tên khách hàng: ");
-                khachHang.setTenKH(scanner.nextLine());
+        boolean checkLevel = true;
+        KhachHang khachHang = new KhachHang();
+        System.out.print("Nhập mã khách hàng: ");
+        khachHang.setMaKH(scanner.nextLine());
+        System.out.print("Nhập tên khách hàng: ");
+        khachHang.setTenKH(scanner.nextLine());
 
+        String path="E:\\Java\\BtNganHangKhachHangCheckout\\trunk\\OutputDanhSachKhachHang.txt";
+        Write write = new Write();
+        System.out.print("Nhập level: ");
+        khachHang.setLevel(checkNhapSo());
 
+        System.out.print("Nhập số tiền trong tài khoản (số dư): ");
+        khachHang.setSoDuTaiKhoan(scanner.nextDouble());
+        scanner.nextLine();
 
-                System.out.print("Nhập level: ");
-                khachHang.setLevel(checkNhapSo());
-
-
-                System.out.print("Nhập số tiền trong tài khoản (số dư): ");
-                khachHang.setSoDuTaiKhoan(scanner.nextDouble());
-                scanner.nextLine();
-
-                listKhachHang.add(khachHang);
-                 s = khachHang.getSoDuTaiKhoan();
+        listKhachHang.add(khachHang);
+        s = khachHang.getSoDuTaiKhoan();
 //                break;
 //
 //            }

@@ -52,11 +52,11 @@ public class KhachHang {
 
     @Override
     public String toString() {
-        return "KhachHang{" +
-                "maKH='" + maKH + '\'' +
-                ", tenKH='" + tenKH + '\'' +
-                ", level=" + level +
-                ", soDuTaiKhoan=" + soDuTaiKhoan +
+        return "Khách Hàng {" +
+                "Mã ID: " + maKH +
+                ", Họ tên: " + tenKH +
+                ", Level = " + level +
+                ", Số dư tài khoản: " + soDuTaiKhoan +
                 '}';
     }
 }
